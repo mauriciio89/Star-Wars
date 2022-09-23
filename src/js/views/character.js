@@ -2,21 +2,39 @@ import React from "react";
 
 export const Character = () => {
   return (
-    <div>
-      <div className="card" style={{ width: "18rem" }}>
-        <img className="card-img-top" src="..." alt="Card image cap" />
+    <div className="card-horizontal d-flex">
+      <div className="card-horizontal">
+        <div className="img-square-wrapper">
+          <img
+            className=""
+            src="http://via.placeholder.com/800x600"
+            alt="Card image cap"
+          />
+        </div>
         <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          <h4 className="card-title">Card title</h4>
+          <p className="card-text justify-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+            sed fermentum dui, vitae venenatis dolor. Nam tincidunt elit sit
+            amet semper aliquam. Aenean purus eros, blandit sed ullamcorper eu,
+            blandit a nulla. Etiam viverra, urna in ornare tristique, odio nulla
+            rutrum lorem, aliquam vestibulum nibh lectus non ex. Fusce eu erat
+            lorem. Mauris in mauris sit amet elit malesuada accumsan. Vivamus ut
+            rhoncus ante. Integer convallis ante gravida eros dapibus maximus.
+            Phasellus at justo eu purus interdum eleifend. Interdum et malesuada
+            fames ac ante ipsum primis in faucibus. Nunc luctus ligula iaculis,
+            placerat velit vitae, consequat velit. Mauris sed mauris rutrum,
+            dapibus sapien iaculis, finibus lacus. Etiam venenatis fringilla
+            massa, consequat sollicitudin felis tempor eu. Ut suscipit eu nunc
+            sit amet placerat. Etiam lacinia purus sit amet est ultrices, ac
+            viverra elit rhoncus. Quisque tempor leo consectetur aliquet
+            sodales.
           </p>
-          <a href="#" className="btn btn-primary">
-            Go somewhere
-          </a>
         </div>
       </div>
-      character
+      <div className="card-footer">
+        
+      </div>
     </div>
   );
 };

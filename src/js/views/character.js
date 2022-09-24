@@ -30,6 +30,9 @@ export const Character = () => {
             viverra elit rhoncus. Quisque tempor leo consectetur aliquet
             sodales.
           </p>
+          
+          <hr className="hrStyle" style={{ color: "red" }} />
+          
         </div>
       </div>
       <div className="card-footer">

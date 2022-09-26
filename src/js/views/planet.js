@@ -1,19 +1,27 @@
 import React from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { Context } from "../store/appContext";
 
 export const Planet = () => {
+  const params = useParams();
+  const { store, actions } = useContext(Context);
+  useEffect(() => {
+    actions.loadPlaneta(params.theid);
+  }, []);
+  console.log(store.planeta);
   return (
     <div className="card-horizontal d-flex">
       <div className="card-horizontal">
-        <div className="img-square-wrapper">
+        <div className="col-md-4">
           <img
-            className=""
-            src="http://via.placeholder.com/800x600"
-            alt="Card image cap"
+            src={`https://starwars-visualguide.com/assets/img/planets/${params.theid}.jpg`}
+            className="img-fluid rounded-start"
+            alt="..."
           />
         </div>
         <div className="card-body">
-          <h4 className="card-title">Card title</h4>
+          <h4 className="card-title">{store.planeta.name}</h4>
           <p className="card-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             sed fermentum dui, vitae venenatis dolor. Nam tincidunt elit sit
@@ -33,11 +41,7 @@ export const Planet = () => {
           </p>
         </div>
       </div>
-      <div className="card-footer">
-        
-      </div>
+      <div className="card-footer"></div>
     </div>
   );
 };
-
-

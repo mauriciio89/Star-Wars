@@ -1,12 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 const Card = ({ type, name, theid }) => {
+  const { store, actions } = useContext(Context);
   return (
     <div className="card col-4 mx-3">
       <img
-        src="https://www.prensalibre.com/wp-content/uploads/2019/11/luke-skywalker-644x362.jpg?quality=52
-"
+        src={`https://starwars-visualguide.com/assets/img/${type === "character" ? "characters" : "planets"}/${theid}.jpg`}
         className="card-img-top"
         alt="..."
       />
@@ -17,20 +18,17 @@ const Card = ({ type, name, theid }) => {
           bulk of the card's content.
         </p>
         <Link
-          to={type === "character" ? "/character/"+theid : "/planet/"+theid}
+          to={type === "character" ? "/character/" + theid : "/planet/" + theid}
           className="btn btn-primary"
         >
           Learn more!
         </Link>
-        <button 
-        
-        href="#" className="btn btn-outline-primary float-end">
+        <button onClick={()=>actions.addFav({id:theid, name:name})} className="btn btn-outline-primary float-end">
           <i className="fa fa-heart text-danger" />
         </button>
       </div>
     </div>
   );
 };
-
 
 export { Card };

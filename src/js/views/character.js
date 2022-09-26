@@ -1,28 +1,28 @@
 import React from "react";
-import { useParams } from "react-router";
-import { useContext , useEffect} from "react";
+import { useParams } from "react-router-dom";
+import { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 
 export const Character = () => {
-
   const params = useParams();
-  const {store, actions}=useContext(Context);
-  useEffect(()=>{actions.loadPersonaje(params.theid)}, []);
+  const { store, actions } = useContext(Context);
+  useEffect(() => {
+    actions.loadPersonaje(params.theid);
+  }, []);
   console.log(store.personaje);
-  console.log("hola");
-  console.log(params.theid)
+
   return (
     <div className="card-horizontal d-flex">
       <div className="card-horizontal">
-        <div className="img-square-wrapper">
+        <div className="col-md-4">
           <img
-            className=""
-            src="http://via.placeholder.com/800x600"
-            alt="Card image cap"
+            src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`}
+            className="img-fluid rounded-start"
+            alt="..."
           />
         </div>
         <div className="card-body">
-          <h4 className="card-title">Card title</h4>
+          <h4 className="card-title">{store.personaje.name}</h4>
           <p className="card-text justify-content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             sed fermentum dui, vitae venenatis dolor. Nam tincidunt elit sit
@@ -40,14 +40,11 @@ export const Character = () => {
             viverra elit rhoncus. Quisque tempor leo consectetur aliquet
             sodales.
           </p>
-          
+
           <hr className="hrStyle" style={{ color: "red" }} />
-          
         </div>
       </div>
-      <div className="card-footer">
-        
-      </div>
+      <div className="card-footer"></div>
     </div>
   );
 };

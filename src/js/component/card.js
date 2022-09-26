@@ -17,7 +17,7 @@ const Card = ({ type, name }) => {
           bulk of the card's content.
         </p>
         <Link
-          to={type === "character" ? "/character" : "/planet"}
+          to={`type === "character" ? "/character/${theid}" : "/planet"`}
           className="btn btn-primary"
         >
           Learn more!

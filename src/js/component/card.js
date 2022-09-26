@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = ({ type, name }) => {
+const Card = ({ type, name, theid }) => {
   return (
     <div className="card col-4 mx-3">
       <img
@@ -17,7 +17,7 @@ const Card = ({ type, name }) => {
           bulk of the card's content.
         </p>
         <Link
-          to={`type === "character" ? "/character/${theid}" : "/planet"`}
+          to={type === "character" ? "/character/"+theid : "/planet/"+theid}
           className="btn btn-primary"
         >
           Learn more!

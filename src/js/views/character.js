@@ -1,6 +1,16 @@
 import React from "react";
+import { useParams } from "react-router";
+import { useContext , useEffect} from "react";
+import { Context } from "../store/appContext";
 
 export const Character = () => {
+
+  const params = useParams();
+  const {store, actions}=useContext(Context);
+  useEffect(()=>{actions.loadPersonaje(params.theid)}, []);
+  console.log(store.personaje);
+  console.log("hola");
+  console.log(params.theid)
   return (
     <div className="card-horizontal d-flex">
       <div className="card-horizontal">

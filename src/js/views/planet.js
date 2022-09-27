@@ -13,7 +13,7 @@ export const Planet = () => {
   return (
     <div className="card-horizontal d-flex">
       <div className="card-horizontal">
-        <div className="col-md-4">
+        <div className="col-md-4 container mx-5">
           <img
             src={`https://starwars-visualguide.com/assets/img/planets/${params.theid}.jpg`}
             className="img-fluid rounded-start"
@@ -39,6 +39,25 @@ export const Planet = () => {
             viverra elit rhoncus. Quisque tempor leo consectetur aliquet
             sodales.
           </p>
+          <hr className="hrStyle" style={{ color: "red" }} />
+          <div className="d-flex">
+            <div className="px-2">
+            <h5>Population: {store.planeta.population}</h5>
+            </div>
+            <div className="px-2">
+            <h5>Diameter: {store.planeta.diameter}</h5>
+            </div>
+            <div className="px-2">
+            <h5>Climate: {store.planeta.climate}</h5>
+            </div>
+            <div className="px-2">
+            <h5>Terrain: {store.planeta.terrain}</h5>
+            </div>
+            <div className="px-2">
+            <h5>Gravity: {store.planeta.gravity}</h5>
+            </div>
+            
+          </div>
         </div>
       </div>
       <div className="card-footer"></div>

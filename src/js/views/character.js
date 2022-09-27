@@ -16,15 +16,15 @@ export const Character = () => {
   return (
     <div className="card-horizontal d-flex">
       <div className="card-horizontal">
-        <div className="col-md-4">
+        <div className="col-md-4 container mx-5">
           <img
             src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`}
-            className="img-fluid rounded-start"
+            className="img-fluid rounded-start ml-5"
             alt="..."
           />
         </div>
         <div className="card-body">
-          <h4 className="card-title">{store.personaje.name}</h4>
+          <h2 className="card-title">{store.personaje.name}</h2>
           <p className="card-text justify-content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             sed fermentum dui, vitae venenatis dolor. Nam tincidunt elit sit
@@ -44,6 +44,24 @@ export const Character = () => {
           </p>
 
           <hr className="hrStyle" style={{ color: "red" }} />
+          <div className="d-flex">
+            <div className="px-2">
+            <h5>Height: {store.personaje.height}</h5>
+            </div>
+            <div className="px-2">
+            <h5>Hair Color: {store.personaje.hair_color}</h5>
+            </div>
+            <div className="px-2">
+            <h5>Skin Color: {store.personaje.skin_color}</h5>
+            </div>
+            <div className="px-2">
+            <h5>Eyes Color: {store.personaje.eye_color}</h5>
+            </div>
+            <div className="px-2">
+            <h5>Gender: {store.personaje.gender}</h5>
+            </div>
+            
+          </div>
         </div>
       </div>
       <div className="card-footer"></div>

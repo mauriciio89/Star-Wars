@@ -6,10 +6,12 @@ import { Context } from "../store/appContext";
 export const Character = () => {
   const params = useParams();
   const { store, actions } = useContext(Context);
+  
   useEffect(() => {
     actions.loadPersonaje(params.theid);
   }, []);
   console.log(store.personaje);
+
 
   return (
     <div className="card-horizontal d-flex">

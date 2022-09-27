@@ -18,13 +18,38 @@ const getState = ({ getStore, getActions, setStore }) => {
 			personaje: [],
 			planeta: [],
 			favoritos: [],
+			infoCharacter:[],
+			infoPlanet:[]
 		},
+		
+		verInfoCharacter :(id) => {
+			fetch("https://www.swapi.tech/api/people/" +id)
+					.then(resp => resp.json())
+					.then(resp => setStore({ infoCharacter: resp.result.properties }))
+					.catch(error => console.log(true));
+				
+		},
+
+		verInfoPlaneta: (id) => {
+			fetch("https://www.swapi.tech/api/planets/" +id)
+					.then(resp => resp.json())
+					.then(resp => setStore({ infoPlanet: resp.result.properties }))
+					.catch(error => console.log(true));
+		},		
+
 		actions: {
 			addFav:(item)=>{
 				let aux = getStore().favoritos
 				aux.push(item)
 				setStore({favoritos:aux})
 			},
+
+			removeFav:(index)=>{
+				let aux = getStore().favoritos
+				let x = aux.filter((element, i)=> i !=index)
+				setStore({favoritos:x})
+			},
+
 
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {

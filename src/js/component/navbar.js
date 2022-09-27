@@ -32,6 +32,7 @@ export const Navbar = () => {
                 <li>
               <a class="dropdown-item" href="#">
                 {element.name}
+                <button onClick={()=>actions.removeFav(i)}>X</button>
               </a>
             </li>
               )
